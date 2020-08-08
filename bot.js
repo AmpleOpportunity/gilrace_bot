@@ -80,12 +80,9 @@ if(message.substring(0, 1) == "!") {
 }
 });
 
-var refreshBot = bot.on('message', function() {
-  if(!message){
-      console.log("Checked at: " + DateTime.now());
-    }
-});
-
 function pingBot(){
-  setInterval(refreshBot, 299000);
+  setInterval(() => bot.on('message', function() {
+    if(!message){
+        console.log("Checked at: " + DateTime.now());
+      }}), 299000);
 }
