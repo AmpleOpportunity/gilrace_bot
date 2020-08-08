@@ -16,6 +16,9 @@ var bot = new Discord.Client({
   autorun: true
 });
 
+//TODO initialize pinger
+pingBot();
+
 //logs bot information if both initialization successful
 bot.on('ready', function (evt) {
     logger.info('Connected');
@@ -76,3 +79,13 @@ if(message.substring(0, 1) == "!") {
   }
 }
 });
+
+var refreshBot = bot.on('message', function() {
+  if(!message){
+      console.log("Checked at: " + DateTime.now());
+    }
+});
+
+function pingBot(){
+  setInterval(refreshBot, 299000);
+}
