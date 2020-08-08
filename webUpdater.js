@@ -8,8 +8,8 @@ function UpdateValues(characterName, gilAmount){
   switch(characterName) {
     case 'pavel':
       const updatePavel = webflow.updateItem({
-        collectionId: '5f2dbf3c872a09db52af76ba',
-        itemId: '5f2dbf698129c7932c73f227',
+        collectionId: auth.collectionId,
+        itemId: auth.pavelID,
         fields: {
           'total-gil': gilAmount,
           '_archived' : false,
@@ -24,8 +24,8 @@ function UpdateValues(characterName, gilAmount){
       break;
     case 'kyma':
       const updateKyma = webflow.updateItem({
-        collectionId: '5f2dbf3c872a09db52af76ba',
-        itemId: '5f2dbf6902a28b2fd8404a85',
+        collectionId: auth.collectionId,
+        itemId: auth.kymaID,
         fields: {
           'total-gil': gilAmount,
           '_archived' : false,
