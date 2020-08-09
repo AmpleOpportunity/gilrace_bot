@@ -22,8 +22,8 @@ pingBot();
 //logs bot information if both initialization successful
 bot.on('ready', function (evt) {
     logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    logger.info('Logged in as: ' + bot.username);
+    logger.info('Bot ID: ' + bot.id);
 });
 
 //listens for "!" messages in chat
@@ -81,8 +81,5 @@ if(message.substring(0, 1) == "!") {
 });
 
 function pingBot(){
-  setInterval(() => bot.on('message', function() {
-    if(!message){
-        console.log("Checked at: " + DateTime.now());
-      }}), 299000);
+  setInterval(() => console.log(bot.bot.uptime), 270000);
 }
